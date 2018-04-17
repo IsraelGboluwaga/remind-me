@@ -9,10 +9,9 @@ router.get('/', (req, res, next) => {
 
 router.post('/add', (req, res, next) => {
     const todo = req.body.todo;
-    const time = req.body.time;
     const remindMe = req.body.remindMe;
 
-    const params = {todo, time, remindMe};
+    const params = {todo, remindMe};
 
     Todo.create(params, (err, saved) => {
         if (err) { return err }
